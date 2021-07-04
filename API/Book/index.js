@@ -81,11 +81,15 @@ Parameter       NONE
 Methods         POST
 */ 
 Router.post("/add", async (request, response) => {
-    const { newBook } = request.body;
+    try {
+      const { newBook } = request.body;
   
-    BookModel.create(newBook); 
-  
-    return response.json({ message: "book was added" });
+      await BookModel.create(newBook); 
+    
+      return response.json({ message: "book was added" });
+    } catch (error) {
+      return response.json({ error: error.message });
+    }
 });
   
 // HTTP Client -> helper who helps you make HTTP requests other than GET

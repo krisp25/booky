@@ -38,3 +38,41 @@ let publications = [
 ];
 
 module.exports = { books, authors, publications };
+
+// JSON Example request body of book
+
+// "newBook": {
+//   "ISBN": "12345Two",
+//   "title": "Getting Started with CSS",
+//   "pubDate": "2021-25-05",
+//   "language": "en",
+//   "numPage": 369,
+//   "authors": [
+//       1,
+//       2
+//   ],
+//   "publications": [
+//       1
+//   ],
+//   "category": [
+//       "tech",
+//       "programming",
+//       "education"
+//   ]
+// }
+
+// JSON Example request body of author
+
+// "newAuthor": {
+//   "id": 1,
+//   "name": "Krispy",
+//   "books": ["12345Book"],
+// }
+
+// JSON Example request body of publication
+
+// "newPublication": {
+//   "id": 2,
+//   "name": "trouva",
+//   "books": [],
+// }

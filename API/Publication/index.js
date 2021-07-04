@@ -61,11 +61,15 @@ Parameter       NONE
 Methods         POST
 */ 
 Router.post("/add", async (request, response) => {
-  const { newPublication } = request.body;
+  try {
+    const { newPublication } = request.body;
 
-  PublicationModel.create(newPublication); 
+    await PublicationModel.create(newPublication); 
 
-  return response.json({ message: "publication was added" });
+    return response.json({ message: "publication was added" });
+  } catch (error) {
+    return response.json({ error: error.message });
+  }
 });
 
 /*

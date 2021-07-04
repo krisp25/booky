@@ -60,12 +60,16 @@ Access          PUBLIC
 Parameter       NONE
 Methods         POST
 */ 
-Router.post("/add", (request, response) => {
-  const { newAuthor } = request.body;
+Router.post("/add", async (request, response) => {
+  try {
+    const { newAuthor } = request.body;
 
-  AuthorModel.create(newAuthor); 
-
-  return response.json({ message: "author was added" });
+    await AuthorModel.create(newAuthor); 
+  
+    return response.json({ message: "author was added" });
+  } catch (error) {
+    return response.json({ error: error.message });
+  }
 });
 
 /*

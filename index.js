@@ -1,7 +1,5 @@
 require("dotenv").config();
 
-const { request, response } = require("express");
-
 // Framework
 const express = require("express");
 const mongoose = require("mongoose");

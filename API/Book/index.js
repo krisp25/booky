@@ -4,6 +4,9 @@
 // Router is used to implement micro services
 const Router = require("express").Router();
 
+// Database Models
+const BookModel = require("../../database/book");
+
 /*
 Route           /
 Description     Get all books
